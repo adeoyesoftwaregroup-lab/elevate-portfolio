@@ -113,12 +113,12 @@ export function ProjectsSection({ initialProjects }: ProjectsSectionProps) {
     >
       {/* LAYER 1: LIGHT REFLECTION SPECULAR FLARES */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 h-[600px] w-[1200px] rounded-full bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.06)_0%,rgba(168,85,247,0.02)_40%,transparent_100%)] blur-[60px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(99,102,241,0.03)_0%,transparent_80%)] blur-[80px]" />
+        <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 h-150 w-300 rounded-full bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.06)_0%,rgba(168,85,247,0.02)_40%,transparent_100%)] blur-[60px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] h-100 w-100 rounded-full bg-[radial-gradient(circle,rgba(99,102,241,0.03)_0%,transparent_80%)] blur-[80px]" />
       </div>
 
       {/* LAYER 2: Vector Grid Lines Matrix */}
-      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000004_1px,transparent_1px)] bg-[size:48px_48px] opacity-80 z-[1]" />
+      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000004_1px,transparent_1px)] bg-size-[48px_48px] opacity-80 z-1" />
 
       {/* LAYER 3: Dynamic Ingest Interactive Layout Canvas */}
       <Container className="relative z-10 space-y-12 max-w-7xl mx-auto px-4">
@@ -142,9 +142,9 @@ export function ProjectsSection({ initialProjects }: ProjectsSectionProps) {
               onClick={() =>
                 window.open(flagshipProject.liveUrl, "_blank", "noreferrer")
               }
-              className="relative col-span-12 lg:col-span-8 flex flex-col justify-between overflow-hidden rounded-3xl border border-neutral-200/60 bg-white/70 p-6 sm:p-8 backdrop-blur-xl shadow-[0_32px_60px_-15px_rgba(99,102,241,0.05)] group cursor-pointer min-h-[360px]"
+              className="relative col-span-12 lg:col-span-8 flex flex-col justify-between overflow-hidden rounded-3xl border border-neutral-200/60 bg-white/70 p-6 sm:p-8 backdrop-blur-xl shadow-[0_32px_60px_-15px_rgba(99,102,241,0.05)] group cursor-pointer min-h-90"
             >
-              <span className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent z-10" />
+              <span className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white to-transparent z-10" />
               <div className="flex items-center justify-between w-full relative z-10">
                 <div className="flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50/80 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-indigo-600 backdrop-blur-sm">
                   {flagshipProject.type === "backend" ? (
@@ -194,7 +194,7 @@ export function ProjectsSection({ initialProjects }: ProjectsSectionProps) {
               transition={{ type: "spring", stiffness: 350, damping: 26 }}
               className="relative col-span-12 lg:col-span-4 flex flex-col justify-between overflow-hidden rounded-3xl border border-neutral-200/60 bg-white/70 p-6 sm:p-8 backdrop-blur-xl shadow-[0_32px_60px_-15px_rgba(99,102,241,0.05)] group"
             >
-              <span className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent z-10" />
+              <span className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white to-transparent z-10" />
 
               <div className="flex items-center gap-2 text-neutral-500 font-semibold tracking-wide text-xs relative z-10">
                 <Layers className="w-3.5 h-3.5 text-indigo-600" /> Operational
@@ -214,7 +214,7 @@ export function ProjectsSection({ initialProjects }: ProjectsSectionProps) {
                       ease: "easeOut",
                     }}
                     style={{ height: `${height}%` }}
-                    className="w-full rounded-t bg-gradient-to-t from-indigo-500/20 via-indigo-500/60 to-indigo-600 origin-bottom shadow-sm shadow-indigo-500/10"
+                    className="w-full rounded-t bg-linear-to-t from-indigo-500/20 via-indigo-500/60 to-indigo-600 origin-bottom shadow-sm shadow-indigo-500/10"
                   />
                 ))}
               </div>
@@ -244,12 +244,12 @@ export function ProjectsSection({ initialProjects }: ProjectsSectionProps) {
                 }
                 className="relative flex flex-col justify-between h-72 overflow-hidden rounded-3xl border border-neutral-200/50 bg-white/40 p-6 backdrop-blur-md shadow-sm group cursor-pointer"
               >
-                <span className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent z-10" />
+                <span className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white to-transparent z-10" />
 
                 <div className="flex items-center justify-between w-full relative z-10">
                   <div className="flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-400">
                     <FolderGit2 className="w-4 h-4 shrink-0 text-neutral-300 group-hover:text-indigo-600 transition-colors" />
-                    <span className="truncate max-w-[180px]">
+                    <span className="truncate max-w-45">
                       {project.category}
                     </span>
                   </div>

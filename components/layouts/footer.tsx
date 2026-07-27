@@ -98,13 +98,13 @@ export function Footer() {
 
           <div className="flex items-center gap-6">
             <Link
-              href="#projects"
+              href="/projects"
               className="hover:text-foreground transition-colors"
             >
               Projects
             </Link>
             <Link
-              href="#experience"
+              href="/experience"
               className="hover:text-foreground transition-colors"
             >
               Experience

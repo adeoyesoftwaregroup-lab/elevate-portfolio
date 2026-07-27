@@ -45,7 +45,9 @@ export function HeroStatus() {
           <span className="text-[10px] uppercase font-bold tracking-wider text-neutral-500 leading-none">
             Location Base
           </span>
-          <span className="font-medium text-neutral-300 mt-1">Lagos, NG</span>
+          <span className="font-medium text-neutral-300 mt-1">
+            Johannesburg, SA
+          </span>
         </div>
       </div>
 

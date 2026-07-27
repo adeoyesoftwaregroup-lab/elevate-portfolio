@@ -4,9 +4,16 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // Import precise brand vectors from react-icons
-import { FaJava, FaReact, FaDocker } from "react-icons/fa6";
+import {
+  FaJava,
+  FaReact,
+  FaDocker,
+  FaHtml5,
+  FaCss3,
+  FaPython,
+} from "react-icons/fa6";
 import { SiSpringboot, SiNextdotjs, SiPostgresql } from "react-icons/si";
-import { Cpu } from "lucide-react"; // Generic fallback token for AI / custom structures
+import { Cpu, Database } from "lucide-react"; // Generic fallback token for AI / custom structures
 
 const stackItems = [
   { name: "Java", icon: <FaJava className="w-3.5 h-3.5 text-[#e61f24]" /> },
@@ -26,6 +33,31 @@ const stackItems = [
   },
   { name: "Docker", icon: <FaDocker className="w-3.5 h-3.5 text-[#2496ed]" /> },
   { name: "AI Systems", icon: <Cpu className="w-3.5 h-3.5 text-[#a855f7]" /> },
+  { name: "HTML5", icon: <FaHtml5 className="w-3.5 h-3.5 text-[#086e28]" /> },
+  { name: "CSS3", icon: <FaCss3 className="w-3.5 h-3.5 text-[#dd273c]" /> },
+  {
+    name: "Mongo DB",
+    icon: <Database className="w-3.5 h-3.5 text-[#776488]" />,
+  },
+  {
+    name: "MySql",
+    icon: <Database className="w-3.5 h-3.5 text-[#4c3b97]" />,
+  },
+
+  {
+    name: "Python",
+    icon: <FaPython className="w-3.5 h-3.5 text-[#7d8864]" />,
+  },
+
+  {
+    name: "JavaFx",
+    icon: <FaJava className="w-3.5 h-3.5 text-[#ce8622]" />,
+  },
+
+  {
+    name: "Spring Security",
+    icon: <SiSpringboot className="w-3.5 h-3.5 text-[#181014]" />,
+  },
 ];
 
 export function HeroStack() {

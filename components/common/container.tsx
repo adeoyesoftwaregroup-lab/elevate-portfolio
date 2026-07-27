@@ -1,24 +1,29 @@
-import { cn } from "@/lib/utils";
+import React, { ReactNode, ElementType, ComponentPropsWithoutRef } from "react";
 
-type ContainerProps = {
-  children: React.ReactNode;
+// 1. Define only the unique props your container component introduces
+interface BaseContainerProps {
   className?: string;
-  as?: React.ElementType;
-};
+  children?: ReactNode;
+}
 
-export function Container({
+// 2. Combine base props with the dynamic HTML tag props, omitting duplicates
+export type ContainerProps<T extends ElementType> = BaseContainerProps & {
+  as?: T;
+} & Omit<ComponentPropsWithoutRef<T>, keyof BaseContainerProps | "as">;
+
+// 3. Implement the component with a default fallback to a 'div' element
+export function Container<T extends ElementType = "div">({
+  as,
+  className = "",
   children,
-  className,
-  as: Component = "div",
-}: ContainerProps) {
+  ...props
+}: ContainerProps<T>) {
+  // 4. FIX: Cast to any or ComponentType to bypass strict internal JSX child checking
+  const ComponentTag = (as || "div") as any;
+
   return (
-    <Component
-      className={cn(
-        "mx-auto w-full max-w-7xl px-6 md:px-8 lg:px-10",
-        className,
-      )}
-    >
+    <ComponentTag className={className} {...props}>
       {children}
-    </Component>
+    </ComponentTag>
   );
 }

@@ -15,6 +15,7 @@ import { Logo } from "./logo";
 import { MobileNav } from "./mobile-nav";
 import { ResumeButton } from "./resume-button";
 import { ThemeToggle } from "./theme-toggle";
+import { AccessButton } from "./access-button";
 
 export function Navbar() {
   const { scrollY } = useScroll();
@@ -114,6 +115,10 @@ export function Navbar() {
 
                 <div className="hidden sm:block">
                   <ResumeButton />
+                </div>
+
+                <div className="hidden sm:block">
+                  <AccessButton />
                 </div>
 
                 <MobileNav />
