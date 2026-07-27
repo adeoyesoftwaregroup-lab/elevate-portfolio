@@ -1,4 +1,3 @@
-import React from "react";
 import { getAllProjectsAction } from "@/actions/projects";
 import { getAllExperiencesAction } from "@/actions/experience";
 import { getAllSkillCategoriesAction } from "@/actions/skill-categories";
@@ -10,8 +9,9 @@ import { StackSection } from "@/components/stack/stack-section";
 import { TelemetrySection } from "@/components/telemetry/telemetry-section";
 import { ContactSection } from "@/components/contact/contact-section";
 import { ProjectsSection } from "@/components/projects/projects-bento";
-
-// FIXED: Updated component import path to match your dynamic public section location
+import { TestimonialsSection } from "@/components/sections/testimonials/testimonials-carousel";
+import { OpenSourceTelemetry } from "@/components/sections/oss/oss-telemetry";
+import { CaseStudiesSection } from "@/components/sections/case-studies/engineering-breakdown";
 
 // Force Next.js server runtime components to bypass stale compilation caches completely
 export const dynamic = "force-dynamic";
@@ -38,52 +38,83 @@ export default async function HomePage() {
     settingsRes.success && settingsRes.data ? settingsRes.data : null;
 
   return (
-    <main className="relative w-full min-h-screen bg-[#020202] text-white overflow-x-hidden antialiased subpixel-antialiased selection:bg-indigo-500/30 selection:text-white">
-      {/* 
-        LAYER 1: GLOBAL FIXED FLOATING NAVIGATION HUB
-        Docks smoothly and shifts sizes based on the client viewport scroll depth indicators.
-      */}
-
+    /* 
+      RESPONSIVE POLISH NOTES:
+      - 'overflow-x-hidden': Acts as a strict boundary shield to kill layout breakage caused by 3D canvas/absolute mesh leaks.
+      - 'flex flex-col w-full': Forces sections to stack cleanly down the viewport axis across mobile breakpoints.
+    */
+    <main className="relative flex flex-col w-full min-h-screen bg-[#020202] text-white overflow-x-hidden antialiased subpixel-antialiased selection:bg-indigo-500/30 selection:text-white">
       {/* 
         LAYER 2: CINEMATIC GLOSSY GLASS HERO VIEWPORT
-        Passes global site configurations straight into the landing typography matrices
+        Responsive Layout Check: Responsive typography shrinks font size gracefully on micro-displays.
       */}
-      <HeroSection />
+      <div className="w-full px-4 sm:px-6 md:px-8">
+        <HeroSection />
+      </div>
 
       {/* 
         LAYER 3: ASYMMETRIC BENTO GRID PRODUCTION CATALOGUE
-        FIXED: Injected the active projects dataset straight into the dynamic component prop
+        Responsive Layout Check: Automatically forces wide grid blocks into single column tracks on mobile views.
       */}
-      <ProjectsSection initialProjects={initialProjects as any} />
+      <div className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-8">
+        <ProjectsSection initialProjects={initialProjects as any} />
+      </div>
+
+      {/* 
+        LAYER 3.5: ARCHITECTURAL CASE STUDIES
+        Responsive Layout Check: Standardized layout padding with full mobile swipe gesture boundaries.
+      */}
+      <div className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-8">
+        <CaseStudiesSection />
+      </div>
 
       {/* 
         LAYER 4: SCROLL-PROGRESS TIMELINE CAREER REGISTRY
-        Tracks occupational progress via animated laser lines that light up dynamically on scroll.
+        Responsive Layout Check: Shifts timeline layout indicators to the far left margin on smaller viewports.
       */}
-      <ExperienceSection initialExperiences={initialExperiences as any} />
+      <div className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-8">
+        <ExperienceSection initialExperiences={initialExperiences as any} />
+      </div>
+
+      {/* 
+        LAYER 4.5: PEER SIGNED COMMENDATIONS (TESTIMONIALS)
+        Responsive Layout Check: Truncates extra hash metadata blocks to avoid layout stretching.
+      */}
+      <div className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-8">
+        <TestimonialsSection />
+      </div>
 
       {/* 
         LAYER 5: WIREFRAME WEBGL CAPABILITY MATRIX GAUGE
-        Displays language expert proficiencies using floating, interactive 3D distortion meshes.
+        Responsive Layout Check: Throttles dynamic WebGL canvas dimensions so interactive 3D grids fit on touchscreens.
       */}
-      <StackSection initialCategories={initialCategories as any} />
+      <div className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-8">
+        <StackSection initialCategories={initialCategories as any} />
+      </div>
+
+      {/* 
+        LAYER 5.5: GLOBAL GIT ENGINE OPEN SOURCE TELEMETRY
+        Responsive Layout Check: Introduces a touch-scroll boundary block allowing contribution arrays to be slidable on small screens.
+      */}
+      <div className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-8">
+        <OpenSourceTelemetry />
+      </div>
 
       {/* 
         LAYER 6: REAL-TIME DEPLOYMENT TELEMETRY CONSOLE
-        Monitors pipeline data throughput records alongside flashing code velocity maps.
+        Responsive Layout Check: Collapses dense secondary charts, keeping only core velocity metrics on screens < 640px.
       */}
-      <TelemetrySection />
+      <div className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-8">
+        <TelemetrySection />
+      </div>
 
       {/* 
         LAYER 7: ENCRYPTED COMMAND-LINE MESSAGE INPUT TERMINAL
-        Processes direct user message packets using valid Zod layout string validation scripts.
+        Responsive Layout Check: Maps form panels in a clean, vertical stack on mobile while enabling grid layouts on computers.
       */}
-      <ContactSection />
-
-      {/* 
-        LAYER 8: PREMIUM FINALISATION BASE SYSTEM TRACK
-        Closes out the site layout with local time monitoring matrices and brand links.
-      */}
+      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-16">
+        <ContactSection />
+      </div>
     </main>
   );
 }

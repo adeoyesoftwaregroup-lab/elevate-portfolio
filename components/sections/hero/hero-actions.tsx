@@ -9,7 +9,7 @@ export function HeroActions() {
   return (
     <div className="flex flex-wrap items-center gap-4 select-none pointer-events-auto">
       {/* 1. PRIMARY ACTION: VIEW PROJECTS (CRYSTALLINE RAY SHIMMER) */}
-      <Link href="#projects" className="relative outline-none group">
+      <Link href="/projects" className="relative outline-none group">
         <motion.div
           whileHover={{ scale: 1.02, y: -1 }}
           whileTap={{ scale: 0.98 }}
@@ -26,7 +26,7 @@ export function HeroActions() {
 
       {/* 2. SECONDARY ACTION: DOWNLOAD RESUME (SMOKED OBSIDIAN SHELL) */}
       <Link
-        href="/resume/Yusuf-Adeoye-Resume.pdf"
+        href="/resume/Yusuf-Adeoye-Resume.png"
         target="_blank"
         rel="noopener noreferrer"
         className="relative outline-none group"

@@ -107,10 +107,11 @@ export function ContactSection() {
       id="contact"
       className="relative w-full py-28 bg-[#020202] overflow-hidden select-none"
     >
-      <Container className="relative z-10 w-full max-w-3xl space-y-12">
+      {/* FIXED: Added mx-auto to center the entire max-w-3xl block horizontally */}
+      <Container className="relative z-10 w-full max-w-3xl mx-auto space-y-12">
         {/* Section Heading Group */}
-        <div className="flex flex-col space-y-2 text-left md:text-center md:items-center">
-          <span className="text-[10px] uppercase font-bold tracking-widest text-indigo-400 flex items-center gap-1.5">
+        <div className="flex flex-col space-y-2 text-left md:text-center md:items-center md:justify-center">
+          <span className="text-[10px] uppercase font-bold tracking-widest text-indigo-400 flex items-center gap-1.5 md:justify-center">
             <Mail className="w-3.5 h-3.5" /> Direct Comms Pipeline
           </span>
           <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white max-w-xl">

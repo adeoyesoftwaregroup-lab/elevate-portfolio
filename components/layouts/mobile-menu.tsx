@@ -5,6 +5,8 @@ import { motion, Variants } from "framer-motion";
 import { X } from "lucide-react";
 import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import { navigation } from "@/data/navigation";
+import { ResumeButton } from "./resume-button";
+import { AccessButton } from "./access-button";
 
 interface MenuProps {
   onClose: () => void;
@@ -94,6 +96,10 @@ export function MobileMenu({ onClose }: MenuProps) {
           </motion.div>
         ))}
       </nav>
+      <div className="flex flex-col gap-4">
+        <ResumeButton />
+        <AccessButton />
+      </div>
 
       {/* Footer Branding Social Matrix row */}
       <motion.div
