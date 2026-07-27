@@ -17,8 +17,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elevate -AdeoyeTech",
-  description: "Elevate Modern Portfolio Website For Yusuf Adeoye",
+  title: "Elevate | Yusuf Adeoye",
+  description: "Senior Full Stack Software Developer",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({

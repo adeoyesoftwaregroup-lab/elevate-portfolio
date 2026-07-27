@@ -10,24 +10,30 @@ export function AccessButton() {
       href="/login"
       target="_blank"
       rel="noopener noreferrer"
-      className="relative inline-block outline-none group"
+      className="relative inline-block outline-none group pointer-events-auto cursor-pointer select-none"
     >
       <motion.div
         whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.98 }}
+        whileTap={{ scale: 0.97 }}
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
-        className="relative flex h-9 items-center justify-center gap-1.5 overflow-hidden rounded-full bg-transparent px-4 text-xs font-medium text-neutral-50 shadow-sm transition-colors duration-300 dark:bg-transparent-900 dark:text-neutral-100  hover:bg-transparent hover:text-neutral-100 ring-emerald-400 ring-1 opacity-75"
+        className={`
+          relative flex h-8 items-center justify-center gap-1.5 overflow-hidden rounded-full 
+          bg-neutral-950/40 px-4 font-mono text-[11px] font-bold uppercase tracking-wider text-emerald-400
+          border border-emerald-500/30 transition-all duration-300 
+          hover:border-emerald-400 hover:text-white
+          hover:shadow-[0_0_12px_rgba(16,185,129,0.2)]
+        `}
       >
         {/* Animated Shimmer Border Track */}
-        <span className="absolute inset-0 pointer-events-none rounded-full border border-white/10 dark:border-black/5" />
+        <span className="absolute inset-0 pointer-events-none rounded-full border border-white/[0.02]" />
 
-        {/* Dynamic Ray Effect (Flares up subtly on hover) */}
-        <span className="absolute inset-0 pointer-events-none -z-10 bg-[linear-gradient(110deg,#000,45%,#1e1e1e,55%,#000)] dark:bg-[linear-gradient(110deg,#fff,45%,#f4f4f5,55%,#fff)] bg-size-[200%_100%] animate-[shimmer_2.5s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        {/* FIXED Dynamic Ray Effect: Modified to dark charcoal matrix overlays to keep white text clean */}
+        <span className="absolute inset-0 pointer-events-none -z-10 bg-[linear-gradient(110deg,#020202,45%,#062318,55%,#020202)] bg-[length:200%_100%] animate-[shimmer_3s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Semantic Icon Integration */}
-        <SignalIcon className="h-3.5 w-3.5 stroke-2 transition-transform duration-300 group-hover:-translate-y-0.5" />
+        <SignalIcon className="h-3.5 w-3.5 stroke-[2.5] text-emerald-500 group-hover:text-white transition-colors duration-300 group-hover:animate-pulse" />
 
-        <span className="relative tracking-wide">Account Access</span>
+        <span className="relative tracking-widest">access_gate.sh</span>
       </motion.div>
     </Link>
   );
